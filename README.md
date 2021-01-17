@@ -29,6 +29,7 @@ I used technicise as Below.
 
 # Model Building Part
 I used several alogrithm (around 11) But i got a Good accuracy in Random Forest so i used random Forest Classifier for deployment Part.
+https://github.com/sindhu19460/tripadvisor_reviewsClassification_NLP/blob/main/Model_Building.ipynb
 
 First i checked data is balanced or not ,when i got knew data is imbalance , first i balance and i moved on to the furture.
 
