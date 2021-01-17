@@ -36,6 +36,6 @@ First i checked data is balanced or not ,when i got knew data is imbalance , fir
 # Deployment Part
 
 I used the Falsk Web framework .
-
+https://github.com/sindhu19460/tripadvisor_reviewsClassification_NLP/blob/main/Group4-HRC.zip
 
 # Thank You.
