@@ -34,8 +34,6 @@ https://github.com/sindhu19460/tripadvisor_reviewsClassification_NLP/blob/main/M
 First i checked data is balanced or not ,when i got knew data is imbalance , first i balance and i moved on to the furture.
 
 # Deployment Part
-
-I used the Falsk Web framework .
-https://github.com/sindhu19460/tripadvisor_reviewsClassification_NLP/blob/main/Group4-HRC.zip
+deployed using Flask
 
 # Thank You.
