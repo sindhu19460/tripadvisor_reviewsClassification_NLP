@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <style>
+        nav{
+    height: 70px;
+    background-color:  #165666;
+}
+
+.abb{
+    margin-right: 55px;
+    font-size: large;
+}
+
+.navbar-brand{
+    margin-left: 50px;
+    font-size: x-large;
+}
+
+.abcd{
+    height: 500px;
+    background-color: #0d98ba;
+}
+
+.banner{
+    padding-top: 150px;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+  }
+
+.pi{
+    margin-left: 250px;
+  }
+
+.si{
+    margin-left: 130px;
+  }
+
+.bd{
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 10px;
+    margin-right: 50px;
+}
+    </style>
+    <nav style="background-color: #165666;" class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">SENTIMENT ANALYZER</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item abb">
+              <a class="nav-link" href="./index.html">Home <span class="sr-only"></span></a>
+            </li>
+            </li>
+            <li class="nav-item abb">
+              <a class="nav-link active" href="#">Analysis</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+`       <br>
+      <div class="container-fluid">
+          <center><h2>Analyze The Sentiments </h2></center><br>
+          <div class="row">
+              <div class="col-sm-6">
+                  <img style="max-width: 100%; margin-top: 50px;" src="{{url_for('static', filename= 'sen2.jpeg')}}" alt="">
+              </div>
+              <div class="col-sm-6">
+                  <br><br><br>
+                <div class="card">
+                    <h4 style="color: white;" class="card-header bg-primary">Sentiment Analayzer</h4>
+                    <div class="card-body">
+                      <form action='/analysis.html' method='POST'>
+                        <div class="form-row">
+                          <div class="form-group col-sm-6">
+                            <label for="fname">Input Text</label>
+                            <input style="width: 540px;" type="text" placeholder="Enter your text" class="form-control" id="fname" name="message" required><br>
+                            <button style="margin-left: 250px" type="submit" class="btn btn-primary">Analyze</button>
+                          </div>
+                        </div>
+                    </form>
+                    <br>
+                      <p class='bd'>{{ mes }}</p>
+                      <h3><center>
+                      {{ predictions }} <br></h3>
+                      {% if predictions %}
+                          <div class="row">
+                            <img class='pi' src="{{url_for('static', filename= predictions + '.jpeg')}}"
+                                height="100"
+                            /> 
+                            <br /><h4 class='si'>
+                            The predicted probability is : {{ proba }}</h4>
+                        </div>
+                      {% endif %}</center>
+                    </div>
+                    </div>
+              </div>
+          </div>
+      </div><br><br>
+      <footer style="height: 75px; background-color: #165666;"> 
+        <center><h5 style="color: aliceblue; padding-top: 30px;">Sentiment Analyzer</h5></center>
+    </footer>
+    </body>
+
+</html>

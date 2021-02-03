@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+        <title>Hard Rock Cafe TripAdvisor Review - Sentiment Analyser</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='rock cafe.jpg') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	</head>
+
+	<body style="background-image:url('/static/hard-rock-cafe.jpg'); background-size:cover; background-repeat:no-repeat;">
+
+		<!-- Website Title -->
+    	<div class="container" style="background-color:yellow" >
+            <h2 class='container-heading'><span class="heading_font">Hard Rock Review Cafe NY</span> Sentiment Analyser</h2>
+            <div class='description'>
+    			<p>A Machine Learning Web App, Built with Flask</p>
+    		</div>
+    	</div>
+       <div class="container" style="background-image:url('/static/ryg.jpg'); background-size:100% 100%; background-repeat:no-repeat;">
+		<!-- Result -->
+		<div class="results">
+			{% if prediction==0 %}
+				<h1>Prediction: <span class="label label-success">Great! :) This is a POSITIVE Review.</span></h1>
+				<img class="gif" src="{{ url_for('static', filename='positive-review.webp') }}" alt="Positive Review">
+			{% elif prediction==1 %}
+				<h1>Prediction: <span class="label label-warning">:| This is a NEUTRAL Review.</span></h1>
+				<img class="gif" src="{{ url_for('static', filename='tenor.gif') }}" alt="Neutral Review">
+            {% elif prediction==2 %}
+				<h1>Prediction: <span class="label label-danger">Oh no! This is a NEGATIVE Review.</span></h1>
+				<img class="gif" src="{{ url_for('static', filename='negative-review.webp') }}" alt="Positive Review">
+			{% endif %}
+			<br>
+			   <img class="png" src="{{ url_for('static',filename='sentiment-analysis.png')}}" alt="#" style="background-size:50%;50%;">
+            
+			
+		</div>
+		</div>
+         
+		<!-- Footer -->
+		<div class='footer' style="background-color:orange">
+            <p class='footer-description'>Made By Group 4-P39</p>
+        </div>
+
+	</body>
+</html>
